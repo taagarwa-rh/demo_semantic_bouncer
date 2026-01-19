@@ -46,15 +46,33 @@ First create a JSON file with your texts.
 Then create the collection
 
 ```sh
-uv run src/demo_semantic_bouncer/cli.py create --collection abc_co --file examples/abc_co.json
+uv run src/demo_semantic_bouncer/cli.py create \
+    --collection abc_co \
+    --file examples/abc_co.json
 ```
 
 ### Query a collection
 
 ```sh
-uv run src/demo_semantic_bouncer/cli.py bouncer --collection abc_co --query 'What is the latest sales report?' --distance 0.2
+uv run src/demo_semantic_bouncer/cli.py bouncer \
+    --collection abc_co \
+    --query 'What is the latest sales report?' \
+    --distance 0.2
+```
+
+```txt
+Best match (0.08220): page_content='Get me the latest sales report' metadata={'department': 'Sales', 'route': 'sales_report'}
+Recommended Route: sales_report
 ```
 
 ```sh
-uv run src/demo_semantic_bouncer/cli.py bouncer --collection abc_co --query 'What are my employee benefits?' --distance 0.2
+uv run src/demo_semantic_bouncer/cli.py bouncer \
+    --collection abc_co \
+    --query 'What are my employee benefits?' \
+    --distance 0.2
+```
+
+```txt
+Best match (0.47339): page_content='What is the travel policy?' metadata={'route': 'travel_policy', 'department': 'People'}
+Recommended Route: agent
 ```
