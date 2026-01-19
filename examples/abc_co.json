@@ -1,0 +1,25 @@
+{
+    "texts": [
+        {
+            "content": "Sales report for Q1 2023",
+            "route": "sales_report",
+            "metadata": {
+                "department": "Sales"
+            }
+        },
+        {
+            "content": "Get me the latest sales report",
+            "route": "sales_report",
+            "metadata": {
+                "department": "Sales"
+            }
+        },
+        {
+            "content": "What is the travel policy?",
+            "route": "travel_policy",
+            "metadata": {
+                "department": "People"
+            }
+        }
+    ]
+}

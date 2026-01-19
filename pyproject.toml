@@ -1,0 +1,46 @@
+[project]
+name = "demo_semantic_bouncer"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+authors = [
+    { name = "First Last", email = "flast@redhat.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-chroma>=1.1.0",
+    "langchain-core>=1.2.7",
+    "langchain-huggingface>=1.2.0",
+    "pydantic>=2.12.5",
+    "sentence-transformers>=5.2.0",
+]
+
+[project.scripts]
+main = "demo_semantic_bouncer.main:main"
+
+[dependency-groups]
+dev = [
+    "pytest~=8.1",
+    "pytest-cov>=4.0.0,<5",
+    "ruff>=0.4.1,<0.5",
+    "bump2version>=1.0.1,<2",
+    # "git-cliff>=2.8,<3",
+]
+
+[tool.ruff]
+line-length = 140
+
+[tool.ruff.lint]
+select = ["E", "F", "D", "C", "N"]
+ignore = [
+    "E501", # line-too-long
+    "E402", # module-import-not-at-top-file
+    "D203", # one-blank-line-before-class
+    "D212", # multi-line-summary-first-line
+    "D100", # undocumented-public-module
+]
+per-file-ignores = { "tests/*" = ["D"] }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
